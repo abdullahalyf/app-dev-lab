@@ -1,144 +1,157 @@
 // Main.java
-// Task 2: Create multiple classes (University, Student, Department),
-// then create objects and print their data. Demonstrates basic OOP concepts.
+// Task 2: create a few classes (Student, Department, University) and use them.
 //
-// All classes live in this single file for simplicity. Only the file's
-// filename class (Main) is public; the helper classes are package-private.
+// In real life, every class usually lives in its own file. But for a beginner
+// exercise, putting them all in one file is simpler — Java allows this as
+// long as only the public class (Main) is named after the file.
+//
+// What's an object? Think of a "Student" as a template. A real student like
+// "Abdullah" is one *object* made from that template. Each object has its own
+// data (name, ID, etc.).
 
-// ---- Student class ----
+// -------- Student class --------
+// A Student has three pieces of info: name, ID, and the department they belong to.
 class Student {
 
-    // Private fields
-    private String name;
-    private String studentId;
-    private String department;
+  // These are the "fields" — the data each Student object carries.
+  // We mark them "private" so nothing outside this class can read or change
+  // them directly. They have to go through the methods below (getters/setters).
+  private String name;
+  private String studentId;
+  private String department;
 
-    // Constructor
-    public Student(String name, String studentId, String department) {
-        this.name = name;
-        this.studentId = studentId;
-        this.department = department;
-    }
+  // Constructor: this special method runs when we do "new Student(...)".
+  // It takes the values we pass and stores them inside this object.
+  public Student(String name, String studentId, String department) {
+    this.name = name; // "this.name" means the field of *this* object
+    this.studentId = studentId;
+    this.department = department;
+  }
 
-    // Getters
-    public String getName() {
-        return name;
-    }
+  // "Getters" — let other code *read* the private fields safely.
+  public String getName() {
+    return name;
+  }
 
-    public String getStudentId() {
-        return studentId;
-    }
+  public String getStudentId() {
+    return studentId;
+  }
 
-    public String getDepartment() {
-        return department;
-    }
+  public String getDepartment() {
+    return department;
+  }
 
-    // Setters
-    public void setName(String name) {
-        this.name = name;
-    }
+  // "Setters" — let other code *change* the private fields safely.
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setDepartment(String department) {
-        this.department = department;
-    }
+  public void setDepartment(String department) {
+    this.department = department;
+  }
 
-    // Method to print all info about this student
-    public void displayInfo() {
-        System.out.println("    Student Name: " + name);
-        System.out.println("    Student ID:   " + studentId);
-        System.out.println("    Department:   " + department);
-    }
+  // A simple method that prints all info about this student.
+  // "void" means it doesn't give any value back — it just does something.
+  public void displayInfo() {
+    System.out.println("    Student Name: " + name);
+    System.out.println("    Student ID:   " + studentId);
+    System.out.println("    Department:   " + department);
+  }
 }
 
-// ---- Department class ----
+// -------- Department class --------
+// A Department has a friendly name (like "Computer Science & Engineering")
+// and a short code (like "CSE").
 class Department {
 
-    // Private fields
-    private String name;
-    private String code;
+  private String name;
+  private String code;
 
-    // Constructor
-    public Department(String name, String code) {
-        this.name = name;
-        this.code = code;
-    }
+  // Constructor: runs when we do "new Department(...)".
+  public Department(String name, String code) {
+    this.name = name;
+    this.code = code;
+  }
 
-    // Getters
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getCode() {
-        return code;
-    }
+  public String getCode() {
+    return code;
+  }
 
-    // Method to print department info
-    public void displayInfo() {
-        System.out.println("  Department Name: " + name);
-        System.out.println("  Department Code: " + code);
-    }
+  // Prints this department's info.
+  public void displayInfo() {
+    System.out.println("  Department Name: " + name);
+    System.out.println("  Department Code: " + code);
+  }
 }
 
-// ---- University class ----
+// -------- University class --------
+// A University has a name and (in our simple example) two departments.
+// This shows "composition": a University *contains* Department objects.
 class University {
 
-    private String name;
-    private Department dept1;
-    private Department dept2;
+  private String name;
+  private Department dept1; // holds a reference to a Department object
+  private Department dept2;
 
-    // Constructor
-    public University(String name, Department dept1, Department dept2) {
-        this.name = name;
-        this.dept1 = dept1;
-        this.dept2 = dept2;
-    }
+  // Constructor: takes the university name and the two departments.
+  public University(String name, Department dept1, Department dept2) {
+    this.name = name;
+    this.dept1 = dept1;
+    this.dept2 = dept2;
+  }
 
-    // Method to print the university name and its departments
-    public void displayInfo() {
-        System.out.println("University Name: " + name);
-        System.out.println("Departments:");
-        System.out.println("  - " + dept1.getName());
-        System.out.println("  - " + dept2.getName());
-    }
+  // Prints a short summary of the university and the names of its departments.
+  public void displayInfo() {
+    System.out.println("University Name: " + name);
+    System.out.println("Departments:");
+    System.out.println("  - " + dept1.getName());
+    System.out.println("  - " + dept2.getName());
+  }
 
-    // Method to print full details of every department
-    public void displayAllDepartments() {
-        System.out.println("--- Department Details ---");
-        dept1.displayInfo();
-        System.out.println();
-        dept2.displayInfo();
-    }
+  // Prints full details for *both* departments.
+  public void displayAllDepartments() {
+    System.out.println("--- Department Details ---");
+    dept1.displayInfo();
+    System.out.println();
+    dept2.displayInfo();
+  }
 }
 
-// ---- Main class (entry point) ----
+// -------- Main class --------
+// This is the entry point. Java looks for "public static void main" and starts here.
 public class Main {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        // Step 1: Create Department objects
-        Department cse = new Department("Computer Science & Engineering", "CSE");
-        Department eee = new Department("Electrical & Electronic Engineering", "EEE");
+    // Step 1: build two Department objects.
+    // "new Department(...)" calls the Department's constructor.
+    Department cse = new Department("Computer Science & Engineering", "CSE");
+    Department eee = new Department("Electrical & Electronic Engineering", "EEE");
 
-        // Step 2: Create a University object and pass departments to it
-        University diu = new University("Daffodil International University", cse, eee);
+    // Step 2: build one University, passing in the two departments.
+    University diu = new University("Daffodil International University", cse, eee);
 
-        // Step 3: Create Student objects
-        Student alice = new Student("Alice", "221-15-001", "CSE");
-        Student bob   = new Student("Bob",   "221-15-002", "EEE");
+    // Step 3: build two Student objects.
+    Student s1 = new Student("Abdullah Alif", "252-15-834", "CSE");
+    Student s2 = new Student("Bob", "221-15-002", "EEE");
 
-        // Step 4: Print the data
-        System.out.println("=== University Info ===");
-        diu.displayInfo();
+    // Step 4: print everything. Each section calls a method on the object.
 
-        System.out.println();
-        System.out.println("=== Department Details ===");
-        diu.displayAllDepartments();
+    System.out.println("=== University Info ===");
+    diu.displayInfo();
+    System.out.println();
 
-        System.out.println();
-        System.out.println("=== Student Info ===");
-        alice.displayInfo();
+    System.out.println("=== Department Details ===");
+    diu.displayAllDepartments();
+    System.out.println();
 
-        System.out.println();
-        bob.displayInfo();
-    }
+    System.out.println("=== Student Info ===");
+    s1.displayInfo();
+    System.out.println();
+    s2.displayInfo();
+  }
 }
