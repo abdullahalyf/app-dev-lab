@@ -1,29 +1,32 @@
 # app-dev-diu
 
-Lab work for the App Development course at DIU. Each task lives in its own
-folder (`task_1/`, `task_2/`, ...).
+App Development bootcamp work from the **DIU CPC Club**. Each task lives in
+its own folder (`task_1/`, `task_2/`, ...). The repository is organized by
+task so each assignment stays self-contained and easy to review.
 
-## Layout
+## Repository layout
 
 ```
 app-dev-diu/
 ├── task_1/
-│   └── ArithmeticOperations.java
+│   └── ArithmeticOperations.java   # Task 1 source file(s)
 ├── task_2/
+│   └── ...                         # Task 2 source file(s)
+├── task_3/
+│   └── ...                         # Task 3 source file(s)
 └── ...
 ```
 
-## Daily workflow
+### Conventions
 
-1. Create a new folder for the task, e.g. `task_2/`.
-2. Add your source files inside it.
-3. Commit and push:
-
-```bash
-git add .
-git commit -m "task 2: <short description>"
-git push
-```
+- **One folder per task**, named `task_<n>/` where `<n>` is the task number.
+- **Source files inside the task folder** only — keep all files for a single
+  task together so nothing leaks across tasks.
+- **No nested task folders** — don't put `task_2/` inside `task_1/`; each task
+  sits directly under the repository root.
+- **Match the task's required filenames** (e.g. `ArithmeticOperations.java`
+  for Task 1). Use additional helper files inside the same `task_<n>/` folder
+  if needed.
 
 ## Running the Java tasks
 
