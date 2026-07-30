@@ -19,6 +19,14 @@ This repository contains code and practice files for the DIU CPC Club bootcamp. 
 ```powershell
 javac task_1\ArithmeticOperations.java
 java -cp task_1 ArithmeticOperations
+
+```
+
+Additionally, to run the second task (renamed file):
+
+```powershell
+javac task_2\class_check.java
+java -cp task_2 class_check
 ```
 
 ## Notes

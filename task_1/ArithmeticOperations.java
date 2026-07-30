@@ -1,8 +1,7 @@
-//used formatter and fixed few things by ai. 
-
-public class Task1 {
+// Renamed from task_1.java to match README instructions
+public class ArithmeticOperations {
     public static void main(String[] args) {
-        
+
         int num1 = 20;
         int num2 = 5;
 

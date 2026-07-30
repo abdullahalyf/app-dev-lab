@@ -1,5 +1,4 @@
-//used formatter and fixed few things by ai. 
-
+// Renamed from task_2.java to `class_check.java` per request
 
 class University {
   String name;
@@ -43,7 +42,7 @@ class Student {
   }
 }
 
-public class Main {
+public class class_check {
   public static void main(String[] args) {
 
     University myUni = new University("Daffodil International University");
