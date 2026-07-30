@@ -1,39 +1,37 @@
-# app-dev-diu
+# DIU CPC Club Bootcamp
 
-App Development bootcamp work from the **DIU CPC Club**. Each task lives in
-its own folder (`task_1/`, `task_2/`, ...). The repository is organized by
-task so each assignment stays self-contained and easy to review.
+This repository contains code and practice files for the DIU CPC Club bootcamp. The project is organized by task folders to keep each exercise separate and easy to navigate.
 
-## Repository layout
+## Repository Structure
 
+- `task_1/` - First bootcamp task(s)
+- `task_2/` - Second bootcamp task(s)
+- `task_3/` - Third bootcamp task(s)
+
+## How to Use
+
+1. Open the repository in Visual Studio Code.
+2. Navigate to the task folder you want to work on.
+3. Edit the Java files and save your changes.
+4. Use `clang-format` or a code formatter to keep formatting consistent.
+5. Compile and run Java files from the terminal:
+
+```powershell
+javac task_1\ArithmeticOperations.java
+java -cp task_1 ArithmeticOperations
 ```
-app-dev-diu/
-├── task_1/
-│   └── ArithmeticOperations.java   # Task 1 source file(s)
-├── task_2/
-│   └── ...                         # Task 2 source file(s)
-├── task_3/
-│   └── ...                         # Task 3 source file(s)
-└── ...
-```
 
-### Conventions
+## Notes
 
-- **One folder per task**, named `task_<n>/` where `<n>` is the task number.
-- **Source files inside the task folder** only — keep all files for a single
-  task together so nothing leaks across tasks.
-- **No nested task folders** — don't put `task_2/` inside `task_1/`; each task
-  sits directly under the repository root.
-- **Match the task's required filenames** (e.g. `ArithmeticOperations.java`
-  for Task 1). Use additional helper files inside the same `task_<n>/` folder
-  if needed.
+- This repository is for practice and learning during the DIU CPC Club bootcamp.
+- Keep each task in its own folder so the code stays organized.
+- If you add new tasks, create a new folder like `task_4/`.
 
-## Running the Java tasks
+## Formatting
 
-Each task is self-contained. Example for task 1:
+- The repository uses Java source files.
+- `clang-format` can be used to format code consistently.
 
-```bash
-cd task_1
-javac ArithmeticOperations.java
-java ArithmeticOperations
-```
+## Contact
+
+For questions or help, ask your DIU CPC Club instructors or peers.

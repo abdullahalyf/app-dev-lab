@@ -1,22 +1,28 @@
-# Compiled class files
+# Ignore compiled Java classes
 *.class
 
-# Package files
-*.jar
-*.war
-*.ear
+# Ignore temporary files
+*.tmp
+*.temp
 
-# IDE files
-.idea/
-*.iml
+# Ignore editor files
 .vscode/
-.project
-.classpath
-.settings/
+.idea/
 
-# OS files
+# Ignore VS Code extensions and local tool caches
+.puku/
+.vscode/extensions/
+
+# Ignore OS files
 .DS_Store
 Thumbs.db
 
-# Puku editor metadata
-.puku/
+# Ignore log files
+*.log
+
+# Ignore Java workspace files
+*.swp
+
+# Ignore build folders
+bin/
+out/
