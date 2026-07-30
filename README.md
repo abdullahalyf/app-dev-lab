@@ -29,6 +29,34 @@ javac task_2\class_check.java
 java -cp task_2 class_check
 ```
 
+## How to Run
+
+Use the following commands from the repository root to compile and run each task.
+
+- Windows (PowerShell):
+
+```powershell
+# Task 1
+javac task_1\ArithmeticOperations.java
+java -cp task_1 ArithmeticOperations
+
+# Task 2
+javac task_2\class_check.java
+java -cp task_2 class_check
+```
+
+- Cross-platform (bash / macOS / Linux):
+
+```bash
+# Task 1
+javac task_1/ArithmeticOperations.java
+java -cp task_1 ArithmeticOperations
+
+# Task 2
+javac task_2/class_check.java
+java -cp task_2 class_check
+```
+
 ## Notes
 
 - This repository is for practice and learning during the DIU CPC Club bootcamp.
